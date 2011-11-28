@@ -165,9 +165,14 @@ $program_file
 Created:  $month $day, $year
 Author:   $author"
 
-sublicense_template="
+sublicense_generic_template="
 
 All files in this program are under GPL unless otherwise noted in
+file's header.  Some files may be sublicensed."
+
+sublicense_specific_template="
+
+All files in $program_name are under GPL unless otherwise noted in
 file's header.  Some files may be sublicensed."
 
 
@@ -179,7 +184,12 @@ c_format () {
     echo "/*"
     while read line
     do
-        echo " * $line"
+        if [[ ! -z "$line" ]]
+        then
+            echo " * $line"
+        else
+            echo " *"
+        fi
     done <<< "$1"
     echo " *"
     echo " */"
@@ -188,7 +198,12 @@ c_format () {
 sh_format () {
     while read line
     do
-        echo "# $line"
+        if [[ ! -z "$line" ]]
+        then
+            echo "# $line"
+        else
+            echo "#"
+        fi
     done <<< "$1"
 }
 
@@ -223,13 +238,14 @@ then
     # Generic license
     if [[ $sublicense -eq 1 ]]
     then
-        license_output="$generic_license_template$sublicense_template"
+        license_output="$generic_license_template$sublicense_generic_template"
     else
         license_output="$generic_license_template"
     fi
 
     echo "$license_output" > LICENSE
 
+    echo
     echo "Copy and paste this is your file's header:"
     echo "------------------------------------------------------------------------"
     $formatter "$generic_license_template$authorship_template"
@@ -238,13 +254,14 @@ else
     # Specific license
     if [[ $sublicense -eq 1 ]]
     then
-        license_output="$specific_license_rootfile_template$sublicense_template"
+        license_output="$specific_license_rootfile_template$sublicense_specific_template"
     else
         license_output="$specific_license_rootfile_template"
     fi
 
     echo "$license_output" > LICENSE
 
+    echo
     echo "Copy and paste this is your file's header:"
     echo "------------------------------------------------------------------------"
     $formatter "$specific_license_template$authorship_template"
