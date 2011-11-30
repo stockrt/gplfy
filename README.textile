@@ -1,0 +1,82 @@
+h2. Gplfy
+
+Gplfy helps you to license your software under GPL according to the guidance given at "GPL how-to":http://www.gnu.org/licenses/gpl-howto.html.
+
+h2. Usage
+
+Clone:
+
+<pre>
+<code>
+    git clone https://github.com/stockrt/gplfy.git
+    cd gplfy
+</code>
+</pre>
+
+Using:
+
+<pre>
+<code>
+    ./gplfy.sh
+
+    Usage: gplfy.sh -a <author_name> -e <author_email> -f <c|sh> [-o] [-s] <program_file> [program_name]
+        -a Author name.
+        -e Author e-mail.
+        -f Comment format.
+            c: for C code.
+            sh: for Shell script code.
+        -o Overwrite existing files.
+        -s Sublicense note.
+
+    Examples:
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f sh mycode.sh
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f c mycode.c
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f c mycode.c "My Program"
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f c mycode.c MyProgram
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f c -o mycode.c MyProgram
+        gplfy.sh -a "Rogério Carvalho Schneider" -e stockrt@gmail.com -f c -o -s mycode.c "My Program"
+</code>
+</pre>
+
+h2. Tests
+
+I am using "roundup":http://bmizerany.github.com/roundup as I feel comfortable with Shell Scripting in "Bash":http://tldp.org/LDP/abs/html.
+
+Install roundup:
+
+<pre>
+<code>
+    pushd /tmp
+    rm -rf bmizerany-roundup*
+    curl -s -L https://github.com/bmizerany/roundup/tarball/master | tar xzvf -
+    pushd bmizerany-roundup*
+    ./configure
+    make
+    sudo make install
+    popd
+    rm -rf bmizerany-roundup*
+    popd
+</code>
+</pre>
+
+Then run the tests and see the madness:
+
+<pre>
+<code>
+    roundup
+</code>
+</pre>
+
+h2. Author
+
+Rogério Carvalho Schneider <stockrt@gmail.com>
+
+"http://stockrt.github.com":http://stockrt.github.com
+
+h2. Contributors
+
+"People":https://github.com/stockrt/gplfy/contributors
+
+h2. License
+
+See "LICENSE":https://github.com/stockrt/gplfy/blob/master/LICENSE
