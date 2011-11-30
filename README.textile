@@ -1,6 +1,6 @@
 h2. Gplfy
 
-Gplfy helps you to license your software under GPL according to the guidance given at "GPL how-to":http://www.gnu.org/licenses/gpl-howto.html.
+Gplfy helps you to license your software under GPL by creating the right files in the right place, all according to the guidance given at "GPL how-to":http://www.gnu.org/licenses/gpl-howto.html.
 
 h2. Usage
 
