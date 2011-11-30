@@ -28,6 +28,10 @@ filter_file () {
 ## TESTS ##
 ###########
 
+after () {
+    rm -f AUTHOR COPYING LICENSE
+}
+
 it_creates_generic_c_license () {
     author_content="$(filter_file files/AUTHOR)"
     copying_content="$(filter_file files/COPYING)"
@@ -41,7 +45,6 @@ it_creates_generic_c_license () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_c_license_overwrite () {
@@ -58,7 +61,6 @@ it_creates_generic_c_license_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_c_sublicense () {
@@ -74,7 +76,6 @@ it_creates_generic_c_sublicense () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_c_sublicense_overwrite () {
@@ -91,7 +92,6 @@ it_creates_generic_c_sublicense_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_c_license () {
@@ -107,7 +107,6 @@ it_creates_specific_c_license () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_c_license_overwrite () {
@@ -124,7 +123,6 @@ it_creates_specific_c_license_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_c_sublicense () {
@@ -140,7 +138,6 @@ it_creates_specific_c_sublicense () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_c_sublicense_overwrite () {
@@ -157,7 +154,6 @@ it_creates_specific_c_sublicense_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_sh_license () {
@@ -173,7 +169,6 @@ it_creates_generic_sh_license () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_sh_license_overwrite () {
@@ -190,7 +185,6 @@ it_creates_generic_sh_license_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_sh_sublicense () {
@@ -206,7 +200,6 @@ it_creates_generic_sh_sublicense () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_generic_sh_sublicense_overwrite () {
@@ -223,7 +216,6 @@ it_creates_generic_sh_sublicense_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_sh_license () {
@@ -239,7 +231,6 @@ it_creates_specific_sh_license () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_sh_license_overwrite () {
@@ -256,7 +247,6 @@ it_creates_specific_sh_license_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_sh_sublicense () {
@@ -272,7 +262,6 @@ it_creates_specific_sh_sublicense () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
 
 it_creates_specific_sh_sublicense_overwrite () {
@@ -289,5 +278,4 @@ it_creates_specific_sh_sublicense_overwrite () {
     test "$a" = "$author_content"
     test "$c" = "$copying_content"
     test "$l" = "$license_content"
-    rm -f AUTHOR COPYING LICENSE
 }
