@@ -188,12 +188,12 @@ Author:   $author"
 
 sublicense_generic_template="
 
-All files in this program are under GPL unless otherwise noted in
+All files in this program are under GPLv3 unless otherwise noted in
 file's header.  Some files may be sublicensed."
 
 sublicense_specific_template="
 
-All files in $program_name are under GPL unless otherwise noted in
+All files in $program_name are under GPLv3 unless otherwise noted in
 file's header.  Some files may be sublicensed."
 
 
